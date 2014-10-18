@@ -50,14 +50,14 @@ Directives
 Steps to Run Project (assumes you have nodejs installed)
  
 ```
- git clone git@github.com:gatortim50/CaptchaDemo.git
- cd CaptchaDemo/server 
+ git clone git@github.com:gatortim50/Angular-CaptchaDemo.git
+ cd Angular-CaptchaDemo/server 
  npm install
  node server.js
  
  open new window and ...
  
- cd CaptchaDemo/client
+ cd Angular-CaptchaDemo/client
  npm install
  bower install
  grunt serve 
