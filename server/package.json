@@ -1,0 +1,12 @@
+{
+  "name": "back-end",
+  "description": "Back End Server Application",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "just.randomstring": "latest"
+  }
+}
