@@ -10,20 +10,14 @@
  * Main controller of the application.
  */
 
-  var captchaCtrl = function ($scope, localStorageService, captchaSrvc) {
+  var captchaCtrl = function ($scope, captchaSrvc) {
 
     $scope.solved = false;
-
-    function clearAll() {
-      console.log("no search results clear localstorage");
-      return localStorageService.clearAll();
-    }
 
     var onComplete = function(data){
       var rs = data.captcha;
       $scope.data =  rs.toUpperCase();
       console.log("captcha: " + JSON.stringify($scope.data));
-      localStorageService.set('captchaData', $scope.data);
     };
 
     var onError = function(reason){
@@ -45,8 +39,8 @@
 
     // submit the data
     $scope.doSubmit = function (captchaForm) {
-      //console.log("****--- doSubmit: " + $scope.data + " " + captchaForm.captcha);
-      if ($scope.data == captchaForm.captcha) {
+      console.log("**** doSubmit: " + $scope.data + " " + captchaForm.captcha.toUpperCase());
+      if ($scope.data === captchaForm.captcha.toUpperCase()) {
         console.log(  "u da captcha daddy" );
         $scope.solved = true;
         setTimeout(function(){$scope.solved = false;},300)
@@ -55,7 +49,7 @@
 
   };
 
-  captchaCtrl.$inject = ['$scope', 'localStorageService', 'captchaSrvc'];
+  captchaCtrl.$inject = ['$scope', 'captchaSrvc'];
 
   angular.module('clientApp').controller('captchaCtrl', captchaCtrl);
 
