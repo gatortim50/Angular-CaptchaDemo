@@ -5,14 +5,13 @@ AngularJS App that demonstrates a captcha:
 
 ```
 1. The app is scaffolded using yeoman with bower and grunt
-2. Load captcha via $http service - $http.get(server:port/captcha)
+2. Load captcha via $http service - $http.get(locahost:300/captcha)
 ```
 
 Server:
 ```
-uses node or even better nodemon and express with cors
-setup to run by default on: Back End Server running at localhost:3000
-the server will serve up the captcha json
+nodemon, express, cors and just.randomstring to
+generate the captcha text
 ```
 
 Client:
@@ -37,30 +36,29 @@ Views
 ```
   captcha.html - shell page containing the other views using ng-include
   captchaForm.html - the captcha form
-  navbarHeader.html - bootstrap banner  
-  
- 
+  navbarHeader.html - bootstrap banner
+
+
 ```
 
 Directives
 ```
-  navbar.js - serves up navbarHeader.html - bootstrap banner  
+  navbar.js - serves up navbarHeader.html - bootstrap banner
 ```
- 
+
 Steps to Run Project (assumes you have nodejs installed)
- 
+
 ```
  git clone git@github.com:gatortim50/Angular-CaptchaDemo.git
- cd Angular-CaptchaDemo/server 
+ cd Angular-CaptchaDemo/server
  npm install
- node server.js
- 
+ npm start
+
  open new window and ...
- 
+
  cd Angular-CaptchaDemo/client
  npm install
  bower install
- grunt serve 
- or 
+
  grunt serve --force
 ```
