@@ -4,7 +4,7 @@ var express = require('express'),
   cors = require('cors');
 
 var captcha = require('./routes/randomstring');
- 
+
 var app = express();
 
 app.use(bodyParser.json());
@@ -19,4 +19,4 @@ app.get('/captcha', captcha.findCaptcha);
 
 var port = 3000;
 app.listen(port);
-console.log('Back End Server running at http://127.0.0.1:' + port);
+console.log('Server running at http://127.0.0.1:' + port);

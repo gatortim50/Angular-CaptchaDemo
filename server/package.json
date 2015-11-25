@@ -3,10 +3,16 @@
   "description": "Back End Server Application",
   "version": "0.0.1",
   "private": true,
+  "script": {
+    "start": "nodemon server.js"
+  },
   "dependencies": {
     "body-parser": "latest",
     "cors": "latest",
     "express": "latest",
     "just.randomstring": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
   }
 }
