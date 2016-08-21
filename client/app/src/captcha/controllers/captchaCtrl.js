@@ -39,6 +39,12 @@
 
     // submit the data
     $scope.doSubmit = function (captchaForm) {
+      console.log('captchaForm submitted', captchaForm.captcha);
+      if(captchaForm.captcha === angular.undefined ||
+          captchaForm.captcha === null){
+        console.log('nothing submitted');
+        return;
+      }
       console.log("**** doSubmit: " + $scope.data + " " + captchaForm.captcha.toUpperCase());
       if ($scope.data === captchaForm.captcha.toUpperCase()) {
         console.log(  "u da captcha daddy" );
