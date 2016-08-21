@@ -13,6 +13,12 @@ app.use(cors());
 
 //var rs = randomstring(5);
 
+// basic route
+app.get('/', function(req, res) {
+  res.send('Captcha API is at http://localhost:3000');
+});
+
+
 // methods in routes/randomstring.js
 app.get('/captcha', captcha.findCaptcha);
 
